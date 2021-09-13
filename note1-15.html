@@ -1,0 +1,240 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    JS简介
+Javascript分三种学习
+1，ECMAscript
+2，DOM
+3，BOM
+JS的HelloWorld
+控制浏览器弹出一个警告框
+alert（”alert也是JS代码”）；
+向页面（body）中输出内容
+document.write("直接在页面显示文字");
+向控制台输出内容
+console.log("这里的内容不在页面显示哦~！");
+JS编写位置
+onclick属性。当点击按钮时，js代码才会执行
+<button onclick="alert('点我嘎哈？？');">点我啊点我呀</button>
+可将js代码写在超链接代码href属性中，这样当点击超链接时，会执行js代码
+<a href="javascript:alert('让你点你就点啊？？');">快快点我一下哎</a>
+以上两点，虽然可以使用，但是因为不方便维护，不推荐使用
+可以将js代码编写到外部js文件中。
+<script src="3.js"></script>
+也可以同时把外部和内部的都写在一起。
+<script>alert("内部的js代码");</script>
+<script src="3.js"></script>
+字面量和变量
+字面量，都是一些不能改变的值
+              如：1，2，3，4
+变量，可以用来保存字面量，而且变量的值是可以任意改变的
+            更加方便使用。在开发中都是通过变量来保存一个字面量。
+           如：x=21434135355;          以后就可以用x来代替后边的一串数字了
+如何使用变量声明字面量呢？
+在js中使用var关键字来生命一个变量
+var a = 300 ;
+console.log(a);                      //300
+var还可以更具体一些
+比如说，这个变数是年龄就可以写age
+var age = 20 ;
+(편집됨)
+
+han  오후 12:52
+标识符
+在JS中所有的可以由我们自主命名的都可以称为是标识符
+列入：变量名，函数名，属性名都属于标识符
+命名一个标识符有以下规则要遵守：
+         1.标识符中可以含有字母，数字，＿，＄
+　　  2.标识符不能用数字开头 如：1abc
+         3.标识符不能是ES中的关键字或保留字： var var ，var if ，var class 等等，，，
+         4.标识符一般都采用驼峰命名法
+                          首字母小写，每个单词的开头字母大写，其余字母小写
+                          helloWorld
+字符串
+数据类型指的就是字面量的类型
+    在JS中一共有六种数据类型
+          String 字符串
+          Number 数值
+          Boolean 布尔值
+          Null  空值
+          Undefined 未定义
+          Object 对象
+    String到Undefined 是基本数据类型
+    Object属于引用数据类型
+String字符串
+    在JS中字符串需要使用引号引起来，没有引号很有可能是变量
+          列：var str ＝　”hello”;
+          列：console.log(hello);里的hello就是变量，
+             而console.log("hello");里的hello是字符串
+    双引号里不能放双引号，单引号里不能放单引号
+           列：var str = "  双引号 '单引号' 双引号  "
+    字符串中我们可以使用\作为转义字符，
+         当表示一些特殊符号时可以使用\进行转义。
+          就是\后边的字符没有特殊意义的意思。
+                 列 : var str = " 双引号  \"双引号\"  双引号 "
+         \"  表示"
+          \'  表示'
+          \n  表示换行
+          \t   制表符
+          \\   表示 \
+Number
+在JS中所有的数值都是Number类型，
+    包括证书和浮点数（小数 ）
+var a = 123 ; 这个是数字123
+var b = "123" ; 这个是字符串123
+但是在console窗里都显示"123"，所以是看不出类型的。
+辨别类型的方法 ：
+可以使用一个运算符typeof 来检查一个变量的类型
+    语法: console. log(  typeof 变量  );
+     检查字符串时，会返回string
+     检查数值时，会返回number
+NaN是一个特殊的数字，表示Not A Number
+    使用typeof检查NaN也会返回Number
+如果使用JS进行浮点运算，可能得到一个不精确的结果
+所以千万不好使用JS进行对精确度要求较高的运算
+Boolean布尔值
+布尔值只有两个
+ture
+         表示真
+false
+         表示假
+Null和Undefined
+Null (空值)
+类型的值只有一个，就是null
+  null这个值专门用来表示一个为空的对象
+使用typeof检查一个null时，会返回object
+Undefined (未定义)
+类型的值只有一个，就是Undefined
+当声明一个变量，但是并不给变量赋值时，它的值就是Undefined
+   列 ： var b； //b没有赋值
+             console.log(  b  ) ;   //结果是Undefined
+使用typeof检查一个Undefined 时，会返回Undefined
+ (편집됨) 
+
+kim:야자수:  오후 6:34
+han 님에 의해 #尚硅谷javascript基础实战에 추가되었습니다.
+
+han  오후 10:39
+强制类型转换
+将一个数据类型强制转换为其他的数据类型
+  类型转换主要指，将其他的 数据类型，转换为
+           String，Number，Boolean
+将其他的数据类型转换为String
+  方式一：
+      调用被转换类型的toString（）方法
+　　-调用a的toString（）方法
+        -调用xxx的yyy（）方法，就是xxx.yyy(  )
+         -但是注意：null，undefined这两个值没有toString（）方法，会报错
+         列：
+               let a = 345 ;                               //这时的a的type是Number
+               a = a.toString();
+               console.log(typeof a);              //type成功转成String
+   方式二：
+         对于Number Boolean String都会调用他们的toString()方法来将其转换为字符  串，对于null值，直接转换为字符串”null”。对于undefined直接转换为字符串”undefined”
+         调用String（）函数，；来将a转换为字符串
+          列： a = 345 ;                                //这时的a的type是Number
+                   a = String(a);
+                   console.log(typeof a);             //type成功转成String
+转换为Number
+方式一（强制类型转换）：
+　　调用Number()函数
+　　例子：
+　　　let a = "123";　　　　　　　　  //这时的a的type是String　
+ 　　　a = Number(a);
+   　　 console.log(typeof a);　　　　　 //type成功转成Number
+　　字符串 > 数字
+　　如果字符串是一个合法的数字，则直接转换为对应的数字
+ 　　如果字符串是一个非法的数字，则转换为NaN
+ 　　如果是一个空串或纯空格的字符串，则转换为0
+　　布尔值 > 数字
+　　true转换为1
+ 　　false转换为0
+　　空值 > 数字
+  　　null转换为0
+　　未定义 > 数字
+　　undefined 转换为NaN
+方式二：
+   -专门用来将一个字符串转换为数字的
+  - parsenInt()把一个字符串转换为一个整数
+　列:
+       a = "123abc";                          //这里的type是String
+      a = parseInt(a);                        //把不是数字的后边的全删掉
+       console.log(typeof a);             //type成功转换为Number
+       console.log(a);                        //123
+-parseFloat（）把一个字符串转换为一个浮点数
+-parseFloat()可以将一个字符串中的有效的小数位提取出来，并转换为Number
+  列：
+     a = "123.456coco";                //这里的type是String
+     a = parseFloat(a);                 //把有效的数字取出来
+    console.log(typeof a);             //type成功转换为Number
+    console.log(a);                        //123.456        
+(편집됨)
+
+han  오전 9:06
+进制数字表示（知道就行）
+-0b 开头表示二进制，但是不是所有的浏览器都支持
+-0 开头表示八进制
+-0x 开头表示十六进制
+-可以在parseInt()中指定一个第二个参数，来指定进制
+   列：a = parseInt( a , 10 );      //表示10进制
+转换为Boolean
+方式一（强制类型转换）：
+使用Boolean()函数
+例子：
+        var s = "false";              
+        s = Boolean(s);               //true
+数值 > 布尔
+除了0和NaN其余的全是true
+字符串 > 布尔
+除了空串其余全是true
+null、undefined > 布尔
+都是false
+对象 > 布尔
+都是true
+运算符
+运算符也称为操作符
+通过运算符可以对一个或多个值进行运算或操作
+-typeof运算符
+用来检查一个变量的数据类型
+    语法：typeof 变量
+                它会返回一个用于描述类型的字符串作为结果
+-算数运算符
++ 对两个值进行加法运算并返回结果
+- 对两个值进行减法运算并返回结果
+* 对两个值进行乘法运算并返回结果
+/ 对两个值进行除法运算并返回结果
+% 对两个值进行取余运算并返回结果
+-除了加法以外，对非Number类型的值进行运算时，都会先转换为Number然后在做运算。
+       列：
+                 a = ture + false
+                 console.log( a );             //结果为1
+-任何值和NaN加在一起都是NaN
+       列：
+                 a = 1 + NaN
+                 console.log( a );             //结果为NaN
+-如果是两个字符串进行相加，则会做拼串操作，将两个字符连接为一个字符串。
+       列：
+                 a = "1" + "2";
+                 console.log( a );             //结果12
+-任何值和字符串做加法，都会先转换为字符串，然后再拼串
+       列：
+                 a =  1  + "2";
+                 console.log( a );             //结果12
+-我们还可以将任意的数据类型 ＋ 一个“” 即可将其转换为String
+       列：
+                 a =  true + "";
+                 console.log( a );             //结果true
+-还可以这么用
+       列：
+                 a =  123 ;
+                 console.log( "a =" +  a );             //结果 a = 123
+ (편집됨) 
+</script>
+</body>
+</html>
