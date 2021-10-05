@@ -1,0 +1,47 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       function createPerson(name,age,gender){
+           let obj = new Object();
+           
+           obj.name = name ;
+           obj.age = age ;
+           obj.gender = gender ;
+           obj.sayName = function(){
+               alert(this.name);
+           };
+           return obj;
+       }
+
+
+       function createDog(name, age){
+           let obj = new Object();
+           obj.name = name ;
+           obj.age = age ;
+           obj.sayHello = function(){
+               alert("buck")
+           } ;
+
+           return obj;
+       }
+
+
+       let obj2 = createPerson("coco", 18 , "man");
+       let obj3 = createPerson();
+       let obj4 = createPerson();
+
+    //   obj2.sayName();
+
+        let objDog1 = createDog("lili", 7);
+
+    // objDog1.sayHello();
+
+    </script>
+</body>
+</html>

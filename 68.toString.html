@@ -1,0 +1,40 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Person(name,age){
+            this.name = name;
+            this.age = age;
+        }
+
+        Person.prototype.toString　= function(){
+            return "Person[this.name + this.age]"
+        }
+
+        let per = new Person("lu",14);
+
+        let result = per.toString();
+        console.log(per);
+
+
+
+
+
+
+
+        // function a(name,age){
+        //     this.name = name;
+        //     this.age = age;
+        // }
+
+        // let b = new a("lu",62);
+
+        // console.log(b);
+    </script>
+</body>
+</html>
