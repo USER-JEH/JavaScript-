@@ -1,0 +1,30 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let reg = /a{3}/;
+        // let reg = /(ab){3}/;
+        // let reg = /ab{3}c/;
+        // let reg = /ab{1,3}/;
+        // let reg = /a{3,}/;
+        // let reg = /ab+c/;
+        // let reg = /ab*c/;
+        // let reg = /ab?c/;
+        // reg = /^a/;
+        // reg = /a$/;
+        // reg = /^a$/;//完全一致
+
+
+//電話番号であるかを検証
+        let phone = "13123456789";
+        let tel = /^1[3-9][0-9]{9}$/
+
+        console.log(tel.test(phone));
+    </script>
+</body>
+</html>
